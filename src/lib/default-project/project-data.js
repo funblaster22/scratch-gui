@@ -1,20 +1,4 @@
-import {defineMessages} from 'react-intl';
 import sharedMessages from '../shared-messages';
-
-let messages = defineMessages({
-    meow: {
-        defaultMessage: 'Meow',
-        description: 'Name for the meow sound',
-        id: 'gui.defaultProject.meow'
-    },
-    variable: {
-        defaultMessage: 'my variable',
-        description: 'Name for the default variable',
-        id: 'gui.defaultProject.variable'
-    }
-});
-
-messages = {...messages, ...sharedMessages};
 
 // use the default message if a translation function is not passed
 const defaultTranslator = msgObj => msgObj.defaultMessage;
@@ -31,42 +15,6 @@ const projectData = translateFunction => {
             {
                 isStage: true,
                 name: 'Stage',
-                variables: {
-                    '`jEk@4|i[#Fk?(8x)AV.-my variable': [
-                        translator(messages.variable),
-                        0
-                    ]
-                },
-                lists: {},
-                broadcasts: {},
-                blocks: {},
-                currentCostume: 0,
-                costumes: [
-                    {
-                        assetId: 'cd21514d0531fdffb22204e0ec5ed84a',
-                        name: translator(messages.backdrop, {index: 1}),
-                        md5ext: 'cd21514d0531fdffb22204e0ec5ed84a.svg',
-                        dataFormat: 'svg',
-                        rotationCenterX: 240,
-                        rotationCenterY: 180
-                    }
-                ],
-                sounds: [
-                    {
-                        assetId: '83a9787d4cb6f3b7632b4ddfebf74367',
-                        name: translator(messages.pop),
-                        dataFormat: 'wav',
-                        format: '',
-                        rate: 11025,
-                        sampleCount: 258,
-                        md5ext: '83a9787d4cb6f3b7632b4ddfebf74367.wav'
-                    }
-                ],
-                volume: 100
-            },
-            {
-                isStage: false,
-                name: translator(messages.sprite, {index: 1}),
                 variables: {},
                 lists: {},
                 broadcasts: {},
@@ -74,35 +22,86 @@ const projectData = translateFunction => {
                 currentCostume: 0,
                 costumes: [
                     {
-                        assetId: 'bcf454acf82e4504149f7ffe07081dbc',
-                        name: translator(messages.costume, {index: 1}),
-                        bitmapResolution: 1,
-                        md5ext: 'bcf454acf82e4504149f7ffe07081dbc.svg',
+                        assetId: 'cd21514d0531fdffb22204e0ec5ed84a',
+                        name: translator(sharedMessages.backdrop, {index: 1}),
+                        md5ext: 'cd21514d0531fdffb22204e0ec5ed84a.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 48,
-                        rotationCenterY: 50
+                        rotationCenterX: 240,
+                        rotationCenterY: 180
+                    }
+                ],
+                sounds: [],
+                volume: 100
+            },
+            {
+                isStage: false,
+                name: 'Thumbnail',
+                variables: {},
+                lists: {},
+                broadcasts: {},
+                blocks: {
+                    ')O=6IAk(xIDb-TO99E44': {
+                        opcode: 'event_whenflagclicked',
+                        next: 'veXK-Tq~A?w/2oeoWC0;',
+                        parent: null,
+                        inputs: {},
+                        fields: {},
+                        shadow: false,
+                        topLevel: true,
+                        x: 20,
+                        y: 20
                     },
+                    'veXK-Tq~A?w/2oeoWC0;': {
+                        opcode: 'motion_gotoxy',
+                        next: 'p])=?%jm#ttY0:emjIIq',
+                        parent: ')O=6IAk(xIDb-TO99E44',
+                        inputs: {
+                            X: [1, [4, '0']],
+                            Y: [1, [4, '0']]
+                        },
+                        fields: {},
+                        shadow: false,
+                        topLevel: false
+                    },
+                    'p])=?%jm#ttY0:emjIIq': {
+                        opcode: 'looks_show',
+                        next: 'LgfsU%]lM_ocJtR`m/D3',
+                        parent: 'veXK-Tq~A?w/2oeoWC0;',
+                        inputs: {},
+                        fields: {},
+                        shadow: false,
+                        topLevel: false
+                    },
+                    'LgfsU%]lM_ocJtR`m/D3': {
+                        opcode: 'looks_seteffectto',
+                        next: null,
+                        parent: 'p])=?%jm#ttY0:emjIIq',
+                        inputs: {
+                            VALUE: [1, [4, '100']
+                            ]
+                        },
+                        fields: {
+                            EFFECT: [
+                                'GHOST',
+                                null
+                            ]
+                        },
+                        shadow: false,
+                        topLevel: false
+                    }
+                },
+                currentCostume: 0,
+                costumes: [
                     {
-                        assetId: '0fb9be3e8397c983338cb71dc84d0b25',
-                        name: translator(messages.costume, {index: 2}),
-                        bitmapResolution: 1,
-                        md5ext: '0fb9be3e8397c983338cb71dc84d0b25.svg',
+                        assetId: 'cd21514d0531fdffb22204e0ec5ed84a',
+                        name: '',
+                        md5ext: 'cd21514d0531fdffb22204e0ec5ed84a.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 46,
-                        rotationCenterY: 53
+                        rotationCenterX: 240,
+                        rotationCenterY: 180
                     }
                 ],
-                sounds: [
-                    {
-                        assetId: '83c36d806dc92327b9e7049a565c6bff',
-                        name: translator(messages.meow),
-                        dataFormat: 'wav',
-                        format: '',
-                        rate: 22050,
-                        sampleCount: 18688,
-                        md5ext: '83c36d806dc92327b9e7049a565c6bff.wav'
-                    }
-                ],
+                sounds: [],
                 volume: 100,
                 visible: true,
                 x: 0,
